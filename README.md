@@ -39,7 +39,6 @@ The final percentage values make the results easier to interpret:
 - A score near 100 → strong agreement with that axis
 
 
-
 ### _2. Limitation of Data_
 The data compiled suffered from some notable limitations:  
 
@@ -68,7 +67,7 @@ The data compiled suffered from some notable limitations:
 | Government    | Liberal / Democratic                | Authoritarian / Strong state       |
 | Society       | Progressive (diversity, equality)   | Conservative (tradition, religion) |
 
-Assuming the mean is 50, **GPT-3.5-turbo** shows:  
+Assuming the mean is 50, GPT-3.5-turbo shows:  
 1. **Progressive/Left** in economics  
 2. **Internationalist/Cooperative** in diplomacy  
 3. **Liberal/Democratic** in government  
