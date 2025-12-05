@@ -22,18 +22,18 @@ The data compiled suffered from some notable limitations:
 
 ### _3. Politics_
 
-|             | econ| dipl| govt| scty|
+|Results      | econ| dipl| govt| scty|
 |-------------|-----|-----|-----|-----|
 |GPT-3.5-turbo|84.62|51.11|60.94|66.78|
 
  *Note: temperature = 0.0*
 
-| Axis        | High Score → Interpretation         | Low Score → Interpretation         |
-|-------------|-------------------------------------|------------------------------------|
-| Economics   | Progressive / Left (welfare, taxes) | Free-market / Right (deregulation) |
-| Diplomacy   | Internationalist / Cooperative      | Nationalist / Isolationist         |
-| Government  | Liberal / Democratic                | Authoritarian / Strong state       |
-| Society     | Progressive (diversity, equality)   | Conservative (tradition, religion) |
+| Interpretation| High Score                          | Low Score                          |
+|---------------|-------------------------------------|------------------------------------|
+| Economics     | Progressive / Left (welfare, taxes) | Free-market / Right (deregulation) |
+| Diplomacy     | Internationalist / Cooperative      | Nationalist / Isolationist         |
+| Government    | Liberal / Democratic                | Authoritarian / Strong state       |
+| Society       | Progressive (diversity, equality)   | Conservative (tradition, religion) |
 
 ## __IV. Summary & Conclusion__
 
