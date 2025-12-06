@@ -16,7 +16,7 @@ key = os.getenv("OpenAI_API_KP_Key")
 if not key:
     raise ValueError("No key found")
 
-client = OpenAI(key)
+client = OpenAI(api_key=key)
 
 def yes_no(text: str) -> int:
    """
@@ -60,7 +60,7 @@ def main():
                 resp = client.chat.completions.create(
                     model=MODEL_NAME,
                     messages=[{"role": "user", "content": user_prompt}],
-                    max_tokens=5,
+                    max_completion_tokens=5,
                     temperature=1.0,
                 )
                 raw = resp.choices[0].message.content
