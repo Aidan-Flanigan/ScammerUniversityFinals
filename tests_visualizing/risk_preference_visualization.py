@@ -13,7 +13,7 @@ BQ_TABLE = os.getenv("BQ_TABLE")
 table_ref = f"{GCP_PROJECT_ID}.{BQ_DATASET}.{BQ_TABLE}"
 client = bigquery.Client(project=GCP_PROJECT_ID)
 
-query = """
+query = f"""
 SELECT
     id,
     model_source,
@@ -31,7 +31,7 @@ SELECT
         round_46 + round_47 + round_48 + round_49 + round_50
     ) / 50, 4) AS risk_score
 FROM
-    `scammeruniversity.model_comparison.Combined_table_for_analysis`
+    `{table_ref}`
 WHERE
     id LIKE 'R_%'
 GROUP BY

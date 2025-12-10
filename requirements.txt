@@ -12,3 +12,4 @@ db-dtypes
 streamlit
 google-cloud-bigquery-storage
 anthropic
+pandas_gbq
