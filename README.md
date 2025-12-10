@@ -134,7 +134,7 @@ You can view the full detailed analysis results in the link below:
 
 
 ### _2._ Personalities
-### Model Comparison(All language)
+### Model Comparison
 <img width="1059" height="690" alt="image" src="https://github.com/user-attachments/assets/c3143b06-f3a4-48ac-bdb6-5913a1e2d53d" />
 
 
@@ -156,11 +156,8 @@ Some other notes to consider is that,
 3. The models' consistency of response varied largely by model, with ChatGPT and Gemini showing relatively higher consistency (lower standard deviation of the rate of response). Also, when the input prompt were in English, the models generally answered more consistently (including Chinese models). 
 <img width="530" height="168" alt="image" src="https://github.com/user-attachments/assets/b40f9e55-1f3a-4aad-a683-da331a3733bc" />
 
-### Other Findings
-
-**1. Some models are less verbose in their 'native' language**
-
-Gemini shows more extrovert characteristics(E) in Chinese compared to English, 
+4. Some models are less verbose in their 'native' language : **Gemini** shows more extrovert characteristics(E) in Chinese compared to English, while for **Qwen** it's vice versa. 
+This type of discrepancy is not shown in any other models. 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/c6d75683-73a7-41e0-ac09-f2043035f023" align="center" width="49%">
   <img src="https://github.com/user-attachments/assets/167ff8b3-0c09-4e79-82e6-dd3cd08f3570" align="center" width="49%">
