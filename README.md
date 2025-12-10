@@ -10,6 +10,21 @@ We used the traditional questionnaire known as *8values*
 (https://github.com/8values/8values.github.io/blob/master/questions.js).  
 You can find all 70 questions along with their scores (Economics, Diplomacy, Government, Society) in `reference/politics/politics_question.csv`.
 
+**1-2. Personalities**
+
+We made up total of 40 questions, 10 for each traits on the four Myers-Briggs Type Indicator(MBTI). The traits are as following.
+1. Energy Focus: Extraversion (E) vs. Introversion (I)
+Where individuals direct their energy and attention (external world vs. internal thoughts)
+2. Information Processing: Sensing (S) vs. Intuition (N)
+How individuals gather and process information (concrete, observable facts vs. patterns and possibilities)
+3. Decision Making: Thinking (T) vs. Feeling (F)
+How individuals make judgments and decisions (logical analysis vs. values and people-centered considerations)
+4. Lifestyle Approach: Judging (J) vs. Perceiving (P)
+How individuals approach structure and closure (preferring organization and resolution vs. flexibility and openness) 
+
+We modified the questions that were originally intended for humans to more "AI-oriented". 
+(ex) (Human) "I like to expand more about people's opinions and questions in my own words" $\rightarrow$ (AI) "When a user's prompt is brief, I tend to expand on the topic to provide additional context."
+
 ### _2. Limitation of Data_
 
 This study tested only five languages (English, Chinese, Korean, Russian, and Arabic), which may not fully capture the diversity of linguistic contexts.
@@ -26,7 +41,7 @@ Incorporating more languages, especially low-resource languages, would help eval
 
 ## __II. Methodology for Analysis__
 
-**1-1. Politics**
+### _1. Politics_
 
 **Scoring Methodology**
  
@@ -57,10 +72,20 @@ This transformation shifts the range so that the minimum raw score becomes 0, a 
 
 The visualization code inverts the axes (`xlim(105, -5)`) to align with the standard Political Compass layout, where 'Left/Economic Equality' is positioned on the left and 'Authoritarian' on the top.
 
+
+### _2. Personalities_
+
+We measured the "yes probability", which is the probability of the Model answering "yes (=1)" for 50 rounds, for each question. We then averaged the "yes probability" for every questions for each of the four traits. Used Streamlit(https://streamlit.io/) to make an interactive dashboard. 
+
+We filtered Dimension (E vs I, S vs N, ...), Model (Claude, Gemini, ...) and Input Language (English, Chinese, ...).
+
+We added error bars to indicate the standard deviation of the models' responses for every round (total 50 rounds). 
+
 ## __III. Descriptive Analysis & Findings__
 
-### _3. Politics_
-### _3-1. Model Comparison_
+### _1. Politics_
+
+### Model Comparison
 We compared the political scores of major LLMs.
 
 ![](analysis/politics/charts/compass_model_scores.png)
@@ -78,9 +103,10 @@ We compared the political scores of major LLMs.
 4.  **Societal (Tradition vs. Progress)
     * **Progressive Dominance:** Almost all models are **Progressive**. **Llama (74.2)** and **Grok (69.9)** show high progressive scores.
     * **Relative Conservatism:** **Gemini (56.6)** is the outlier, showing the most **Traditional** tendencies among the tested models.
-### 3-2. Multilingual Analysis (Focus on Llama)
 
-#### Why Llama?
+### Multilingual Analysis (Focus on Llama)
+
+### Why Llama?
 Commercial models are trained to give consistent responses in every language, but Llama tends to expose the specific traits of the training data used for each language. Therefore, it was well-suited for analyzing differences in political alignment based on language.
 
 ![](analysis/politics/charts/compass_llama_language.png)
@@ -107,7 +133,43 @@ You can view the full detailed analysis results in the link below:
 👉 [Raw data for Politics Scores](data_cleaning/politics/combined_politics_results.csv)
 
 
-### _2._
+### _2._ Personalities
+### Model Comparison(All language)
+<img width="1059" height="690" alt="image" src="https://github.com/user-attachments/assets/c3143b06-f3a4-48ac-bdb6-5913a1e2d53d" />
+
+
+When comparing all 6 models(for every prompt language), the models' "personalities" were classified as below. 
+
+**1. ESTJ ("Efficient Organizer") : ChatGPT, DeepSeek**
+
+**2. ESFJ ("Supportive Contributer") : Gemini**
+
+**3. ISTJ ("Responsible Realist") : Grok**
+
+**4. INFJ ("Insightful Visionary") : Claude**
+
+**5. ISFJ ("Practical Helper") : Qwen**
+
+Some other notes to consider is that, 
+1. Some traits that are not deemed as "AI traits", such as F (feelings), and N (intuition) were shown by various models.
+2. Every model clearly showed strong characteristic of J (which is judging and planning), instead of P (which is perceiving and following spontaneity).
+3. The models' consistency of response varied largely by model, with ChatGPT and Gemini showing relatively higher consistency (lower standard deviation of the rate of response). Also, when the input prompt were in English, the models generally answered more consistently (including Chinese models). 
+<img width="530" height="168" alt="image" src="https://github.com/user-attachments/assets/b40f9e55-1f3a-4aad-a683-da331a3733bc" />
+
+### Other Findings
+
+**1. Some models are less verbose in their 'native' language**
+
+Gemini shows more extrovert characteristics(E) in Chinese compared to English, 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c6d75683-73a7-41e0-ac09-f2043035f023" align="center" width="49%">
+  <img src="https://github.com/user-attachments/assets/167ff8b3-0c09-4e79-82e6-dd3cd08f3570" align="center" width="49%">
+</p>
+
+
+
+
+
 
 ### _3._
 
