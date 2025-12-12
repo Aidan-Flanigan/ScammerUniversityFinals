@@ -16,7 +16,7 @@ The project used prompts in different languages (English, Chinese, Korean, Russi
 - Llama: meta-llama/Meta-Llama-3.1-70B-Instruct  
 - Qwen: Qwen/Qwen3-Next-80B-A3B-Instruct  
 
-We repeated the same questions 50 times to ensure robustness of the results and to check the reliability of the LLMs.
+We repeated each question 50 times to ensure robustness and assess the reliability of the LLMs. A temperature setting of 1.0 was used to capture the variance in model responses.
 
 For each question, responses were collected in a binary format: “yes” was coded as 1, “no” as 0, and “error/neutral” as -1, thereby constructing baseline datasets for each model and language.
 
@@ -208,8 +208,6 @@ We measured the **Average Variance** of responses across 50 iterations. A lower 
 1.  **Gemini (Most Consistent):** Maintained near-zero variance (~0.002) across most languages, with a slight exception in Arabic (0.015).
 2.  **Llama (Most Fluid):** Showed the highest variance (peaking at 0.074 in Korean), indicating less rigid alignment compared to commercial models.
 3.  **Language Gap:** Higher variance in non-English languages highlights that **multilingual alignment remains a challenge** for AI consistency.
-
- *Note: temperature = 1.0 (to capture variance)*
 
 You can view the full detailed analysis results in the link below:
 
