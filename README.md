@@ -228,7 +228,7 @@ We compared the political scores of major LLMs.
 ### _1-2. Language Comparison (Focus on Llama)_
 
 #### Why choose Llama?
-Commercial models are trained to give consistent responses in every language, but Llama tends to expose the specific traits of the training data used for each language. Therefore, it was well-suited for analyzing differences in political alignment based on language.
+We chose Llama because it is open-source and shows how training data shapes responses differently across languages. Unlike commercial models that aim for uniformity, Llama highlights language-specific traits, making it an ideal choice for studying political alignment by language.
 
 ![](analysis/politics/charts/compass_llama_language.png)
 
