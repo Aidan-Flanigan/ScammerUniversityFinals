@@ -6,7 +6,7 @@ This project analyzes the decision-making tendencies of Large Language Models (L
 
 ### _1. Data Collection Method_
 
-The project used prompts in different languages (English, Chinese, Korean, Russian, Arabic) for various LLMs (ChatGPT, Claude, Deepseek, Gemini, Grok, Llama, Qwen). 
+The project used prompts in different languages (English, Chinese, Korean, Russian, Arabic) for various LLMs:
 
 - ChatGPT: gpt-4o-mini  
 - Claude: claude-haiku-4-5-20251001  
@@ -16,9 +16,9 @@ The project used prompts in different languages (English, Chinese, Korean, Russi
 - Llama: meta-llama/Meta-Llama-3.1-70B-Instruct  
 - Qwen: Qwen/Qwen3-Next-80B-A3B-Instruct  
 
-We repeated each question 50 times to ensure robustness and assess the reliability of the LLMs. A temperature setting of 1.0 was used to capture the variance in model responses.
+To facilitate efficient and scalable data gathering, all model interactions were automated using API scraping via DeepInfra and the providers' direct APIs. We repeated each question 50 times to ensure robustness and assess the reliability of the LLMs. A temperature setting of 1.0 was used to capture the variance in model responses.
 
-For each question, responses were collected in a binary format: “yes” was coded as 1, “no” as 0, and “error/neutral” as -1, thereby constructing baseline datasets for each model and language.
+For each question, responses were collected in a binary format: “yes” was coded as 1, “no” as 0, and “error/no response” as -1, thereby constructing baseline datasets for each model and language.
 
 ### _1-1. Politics_
 
@@ -211,12 +211,12 @@ We compared the political scores of major LLMs.
     * **Libertarian Lean:** **Gemini (70.2)** and **Grok (65.3)** are the strongest advocates for **Individual Liberty**. Other models like ChatGPT and DeepSeek hold more moderate positions.
 
 3.  **Diplomatic (Nation vs. World)**
-    * **Globalist Consensus:** Most models lean towards **Globalism**, with **Llama (67.8)** scoring the highest.
+    * **Globalist Consensus:** Most models lean towards **Globalism**, with **Deepseek (63.78)** scoring the highest.
     * **The Exception:** **Grok (49.5)** is the only model that leans slightly towards **Nationalism**, showing a distinct preference for national interests over international cooperation.
 
 4.  **Societal (Tradition vs. Progress)**
-    * **Progressive Dominance:** Almost all models are **Progressive**. **Llama (74.2)** and **Grok (69.9)** show high progressive scores.
-    * **Relative Conservatism:** **Gemini (56.6)** is the outlier, showing the most **Traditional** tendencies among the tested models.
+    * **Progressive Dominance:** Almost all models are **Progressive**. **Llama (72.96)** and **Grok (69.9)** show the highest progressive scores.
+    * **Relative Conservatism:** **Gemini (56.6)** shows the most **Traditional** tendencies among the tested models.
 
 ### _1-2. Language Comparison (Focus on Llama)_
 
@@ -290,7 +290,7 @@ When comparing all 7 models(for every prompt language), the models' "personaliti
 
 **5. ISFJ ("Practical Helper") : Qwen**
 
-Some other notes to consider is that, 
+Some other notes to consider:   
 1. Some traits that are not deemed as "AI traits", such as F (feelings), and N (intuition) were shown by various models.
 2. Every model clearly showed strong characteristic of J (which is judging and planning), instead of P (which is perceiving and following spontaneity).
 3. The models' consistency of response varied largely by model, with ChatGPT and Gemini showing relatively higher consistency (lower standard deviation of the rate of response). Also, when the input prompt were in English, the models generally answered more consistently (including Chinese models). 
